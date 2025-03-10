@@ -10,10 +10,10 @@ import images from "../../assets";
 
 const NavBar = () => {
    const menuItems = [
-      { menu: "All Users", link: "alluser" },
+      { menu: "ALL USERS", link: "alluser" },
       { menu: "CHAT", link: "/" },
       { menu: "CONTACT", link: "/" },
-      { menu: "SETTING", link: "/" },
+      { menu: "SETTINGS", link: "/" },
       { menu: "FAQS", link: "/" },
       { menu: "TERMS OF USE", link: "/" },
    ];
@@ -36,8 +36,8 @@ const NavBar = () => {
                <div className={Style.NavBar_box_right_menu}>
                   {menuItems.map((el, i) => (
                      <div
-                        key={i} // Fix duplicate key issue
                         onClick={() => setActive(i + 1)}
+                        key = {i}
                         className={`${Style.NavBar_box_right_menu_item} ${active === i + 1 ? Style.active_btn : ""}`}
                      >
                         <Link className={Style.NavBar_box_right_menu_item_link} href={el.link}>
@@ -47,14 +47,15 @@ const NavBar = () => {
                   ))}
                </div>
                 {/*//mobile */}
-                {open && ( <div className={mobile_menu}>
+                {open && ( <div className={Style.mobile_menu}>
                   {menuItems.map((el, i) => (
                      <div
-                        key={i} // Fix duplicate key issue
                         onClick={() => setActive(i + 1)}
-                        className={`${mobile_menu_item} ${active === i + 1 ? Style.active_btn : ""}`}
+                        key={i+1}
+
+                        className={`${Style.mobile_menu_item} ${active === i + 1 ? Style.active_btn : ""}`}
                      >
-                        <Link className={mobile_menu_item_link} href={el.link}>
+                        <Link className={Style.mobile_menu_item_link} href={el.link}>
                            {el.menu}
                         </Link>
                      </div>

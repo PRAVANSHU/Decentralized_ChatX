@@ -12,7 +12,7 @@ const ChatApp = () => {
   const {}=useContext(ChatAppContext);
   return (
     
-    <div>Hey</div>
+    <div>Welcome To Chat App</div>
     
   )
 }
